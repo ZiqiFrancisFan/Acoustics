@@ -14,6 +14,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include "TestClass.h"
 
 using namespace std;
 
@@ -22,18 +23,9 @@ using namespace std;
  */
 int main(int argc, char** argv) {
 
-    vector<int> v{1,2,3,4,5,6,7,8};
-    for (auto &i : v)     // for each element in v (note: i is a reference)
-        i *= i;           // square the element value
-    for (auto i : v)      // for each element in v
-        cout << i << " "; // print the element
-    cout << endl;
-    auto a = v.begin();
-    auto b = v.end();
-    while (a != b) {
-        cout << *a << endl;
-        ++a;
-    }
+    testClass a;
+    //testClass b(a);
+    testClass b(test(a));
     
     return 0;
 }
